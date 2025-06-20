@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长春48中2024级5班</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #121212;
+            --secondary: #1DB954;
+            --accent: #E50914;
+            --light: #1E1E1E;
+            --dark: #000000;
+            --text: #E0E0E0;
+            --text-secondary: #B3B3B3;
+            --success: #1DB954;
+            --warning: #FFA500;
+            --card-bg: rgba(30, 30, 30, 0.7);
+            --button-bg: rgba(29, 185, 84, 0.8);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--dark);
+            min-height: 100vh;
+            background-image: url('https://t.alcy.cc/pc');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: var(--secondary);
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        h2 {
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        .class-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: rgba(40, 40, 40, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            flex-basis: 48%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-card h3 {
+            color: var(--text);
+            margin-top: 0;
+            border-bottom: 1px solid var(--text-secondary);
+            padding-bottom: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 300px;
+            margin: 30px auto;
+        }
+
+        .button {
+            display: block;
+            padding: 12px 0;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .button:hover {
+            background: #1ed760;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(29, 185, 84, 0.4);
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-item {
+            aspect-ratio: 1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url('https://t.alcy.cc/mp');
+            }
+            
+            .container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .button {
+                padding: 10px 0;
+            }
+            
+            .class-info {
+                flex-direction: column;
+            }
+            
+            .info-card {
+                flex-basis: 100%;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>长春市第四十八中学<br>2024级五班</h1>
+        
+        <div class="class-info">
+            <div class="info-card">
+                <h3>班级简介</h3>
+                <p>2024级五班是一个团结友爱、积极向上的集体。我们班共有49名同学，在班主任徐老师的带领下，我们努力学习，快乐成长，共同创造美好的初中回忆。</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>班主任寄语</h3>
+                <!--<p>"青春因奋斗而精彩，人生因拼搏而无悔。愿五班的每一位同学都能在这里找到自己的方向，勇敢追梦，不负韶华。"</p>
+                <p style="text-align: right;">—— 徐老师</p>-->
+            </div>
+            
+            <div class="info-card">
+                <h3>班级荣誉</h3>
+                <ul>
+                    <!--<li>2024年秋季运动会团体总分第一名</li>
+                    <li>2024年校园艺术节最佳组织奖</li>
+                    <li>连续三个月获得"文明班级"称号</li>-->
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>班级口号</h3>
+                <!--<p style="font-weight: bold; font-size: 1.1em;">"五班五班，非同一般；团结拼搏，勇往直前！"</p>-->
+            </div>
+        </div>
+        
+        <h2>班级相册</h2>
+        <div class="photo-gallery">
+            <a href="photo/watermarked_1750420550706.png" target="_blank">
+                <div class="photo-item" style="background-image: url('photo/watermarked_1750420550706.png')"></div>
+            </a>
+            <a href="photo/watermarked_1750420566322.png" target="_blank">
+                <div class="photo-item" style="background-image: url('photo/watermarked_1750420566322.png')"></div>
+            </a>
+        </div>
+        
+        <h2>班级动态</h2>
+        <div class="info-card">
+            <h3>近期活动</h3>
+            <ul>
+                <li>7月3日至7月4日：期末考试</li>
+            </ul>
+        </div>
+        
+        <div class="button-group">
+            <a href="https://tvguoyuancode.dpdns.org/" class="button">班级专用观影网站（密码：4875）</a>
+            <a href="/tv/" class="button">班级观影列表</a>
+            <a href="/phones/" class="button">班级通讯录</a>
+            <!--<a href="#" class="button">学习资料</a>
+            <a href="#" class="button">班级论坛</a>-->
+        </div>
+        
+        <footer>
+            <p>© 2025 长春市第四十八中学2024级五班 版权所有</p>
+            <p>最后更新：2025年6月20日</p>
+        </footer>
+    </div>
+</body>
+</html>

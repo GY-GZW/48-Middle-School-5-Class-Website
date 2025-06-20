@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级通讯录 - 长春48中2024级5班</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #121212;
+            --secondary: #1DB954;
+            --accent: #E50914;
+            --light: #1E1E1E;
+            --dark: #000000;
+            --text: #E0E0E0;
+            --text-secondary: #B3B3B3;
+            --success: #1DB954;
+            --warning: #FFA500;
+            --card-bg: rgba(30, 30, 30, 0.7);
+            --button-bg: rgba(29, 185, 84, 0.8);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--dark);
+            min-height: 100vh;
+            background-image: url('https://t.alcy.cc/pc');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: var(--secondary);
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #1ed760;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: #1ed760;
+        }
+
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .contact-table th {
+            background: rgba(29, 185, 84, 0.3);
+            padding: 12px 15px;
+            text-align: left;
+            color: var(--secondary);
+        }
+
+        .contact-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .group-title {
+            margin-top: 30px;
+            color: var(--secondary);
+            font-size: 1.3em;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+
+        .teacher-card {
+            background: rgba(40, 40, 40, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .teacher-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #555;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .teacher-info h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
+        .teacher-info p {
+            margin: 5px 0;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-image: url('https://t.alcy.cc/mp');
+            }
+            
+            .container {
+                width: 95%;
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .teacher-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">← 返回班级首页</a>
+        
+        <h1>2024级五班通讯录</h1>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="搜索姓名、学号或职务...">
+            <button>搜索</button>
+        </div>
+        
+        <h2 class="group-title">班主任及任课老师</h2>
+        
+        <div class="teacher-card">
+            <div class="teacher-avatar" style="background-image: url('icon/徐立志.jpg')"></div>
+            <div class="teacher-info">
+                <h3>徐立志老师</h3>
+                <p><strong>职务：</strong>班主任、数学老师</p>
+                <p><strong>联系电话：</strong>13843173168</p>
+                <p><strong>邮箱：</strong>308318957@qq.com</p>
+                <p><strong>办公室：</strong>我不到啊</p>
+            </div>
+        </div>
+        
+        <div class="teacher-card">
+            <div class="teacher-avatar" style="background-image: url('icon/古雪莉.jpg')"></div>
+            <div class="teacher-info">
+                <h3>古雪莉老师</h3>
+                <p><strong>职务：</strong>七年级下半学期政治老师</p>
+                <p><strong>联系电话：</strong>19112690468</p>
+                <p><strong>邮箱：</strong>我不到啊</p>
+            </div>
+        </div>
+        
+        <!--<h2 class="group-title">班干部</h2>
+        
+        <table class="contact-table">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>职务</th>
+                    <th>学号</th>
+                    <th>联系电话</th>
+                    <th>QQ/微信</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张明</td>
+                    <td>班长</td>
+                    <td>20240501</td>
+                    <td>138****0001</td>
+                    <td>QQ: 123456789</td>
+                </tr>
+                <tr>
+                    <td>李红</td>
+                    <td>副班长</td>
+                    <td>20240502</td>
+                    <td>138****0002</td>
+                    <td>微信: lihong2024</td>
+                </tr>
+                <tr>
+                    <td>王芳</td>
+                    <td>学习委员</td>
+                    <td>20240503</td>
+                    <td>138****0003</td>
+                    <td>QQ: 987654321</td>
+                </tr>
+                <tr>
+                    <td>赵强</td>
+                    <td>体育委员</td>
+                    <td>20240504</td>
+                    <td>138****0004</td>
+                    <td>微信: zq2024</td>
+                </tr>
+                <tr>
+                    <td>刘婷</td>
+                    <td>文艺委员</td>
+                    <td>20240505</td>
+                    <td>138****0005</td>
+                    <td>QQ: 456789123</td>
+                </tr>
+            </tbody>
+        </table>-->
+        
+        <!--<h2 class="group-title">全体同学</h2>
+        
+        <table class="contact-table">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>学号</th>
+                    <th>联系电话</th>
+                    <th>QQ/微信</th>
+                    <th>宿舍号</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张明</td>
+                    <td>20240501</td>
+                    <td>138****0001</td>
+                    <td>QQ: 123456789</td>
+                    <td>101</td>
+                </tr>
+                <tr>
+                    <td>李红</td>
+                    <td>20240502</td>
+                    <td>138****0002</td>
+                    <td>微信: lihong2024</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td>王芳</td>
+                    <td>20240503</td>
+                    <td>138****0003</td>
+                    <td>QQ: 987654321</td>
+                    <td>103</td>
+                </tr>
+                <tr>
+                    <td>赵强</td>
+                    <td>20240504</td>
+                    <td>138****0004</td>
+                    <td>微信: zq2024</td>
+                    <td>201</td>
+                </tr>
+                <tr>
+                    <td>刘婷</td>
+                    <td>20240505</td>
+                    <td>138****0005</td>
+                    <td>QQ: 456789123</td>
+                    <td>202</td>
+                </tr>
+                <tr>
+                    <td>陈晨</td>
+                    <td>20240506</td>
+                    <td>138****0006</td>
+                    <td>微信: chenchen6</td>
+                    <td>203</td>
+                </tr>
+                <tr>
+                    <td>杨阳</td>
+                    <td>20240507</td>
+                    <td>138****0007</td>
+                    <td>QQ: 789123456</td>
+                    <td>301</td>
+                </tr>
+                <tr>
+                    <td>周舟</td>
+                    <td>20240508</td>
+                    <td>138****0008</td>
+                    <td>微信: zhouzhou8</td>
+                    <td>302</td>
+                </tr>-->
+                <!-- 更多同学信息可以继续添加 -->
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 30px; padding: 15px; background: rgba(255, 165, 0, 0.1); border-left: 4px solid var(--warning);">
+            <p><strong>注意：</strong>本通讯录仅限班级内部使用，请勿外传他人联系方式，保护同学隐私。</p>
+        </div>
+        
+        <footer>
+            <p>© 2025 长春市第四十八中学2024级五班 版权所有</p>
+            <p>最后更新：2025年6月20日</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 简单的搜索功能
+        document.querySelector('.search-bar button').addEventListener('click', function() {
+            const searchText = document.querySelector('.search-bar input').value.toLowerCase();
+            const rows = document.querySelectorAll('.contact-table tbody tr');
+            
+            rows.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+                if(rowText.includes(searchText)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+        
+        // 回车键触发搜索
+        document.querySelector('.search-bar input').addEventListener('keyup', function(e) {
+            if(e.key === 'Enter') {
+                document.querySelector('.search-bar button').click();
+            }
+        });
+    </script>
+</body>
+</html>
