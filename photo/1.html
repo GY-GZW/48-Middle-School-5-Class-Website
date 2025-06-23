@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级照片墙 - 长春48中2024级5班</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #121212;
+            --secondary: #1DB954;
+            --accent: #E50914;
+            --light: #1E1E1E;
+            --dark: #000000;
+            --text: #E0E0E0;
+            --text-secondary: #B3B3B3;
+            --success: #1DB954;
+            --warning: #FFA500;
+            --card-bg: rgba(30, 30, 30, 0.7);
+            --button-bg: rgba(29, 185, 84, 0.8);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--dark);
+            min-height: 100vh;
+            background-image: url('https://t.alcy.cc/pc');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: var(--secondary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: var(--button-bg);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+        }
+
+        /* 照片墙主体样式 - 简洁版 */
+        .photo-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+            background: #333;
+        }
+
+        .photo-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('https://t.alcy.cc/mp');
+            }
+            
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .photo-wall {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* 加载更多按钮 */
+        .load-more {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .load-more-btn {
+            padding: 12px 30px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .load-more-btn:hover {
+            background: #1ed760;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(29, 185, 84, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>长春48中2024级5班照片墙 1-21</h1>
+            <p>记录我们的青春时光</p>
+            <a href="/" class="back-button">返回班级首页</a>
+        </div>
+        
+        <div class="photo-wall">
+            <!-- 照片1 -->
+            <div class="photo-item">
+                <a href="icon/ (1).jpg" target="_blank">
+                    <img src="icon/ (1).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片2 -->
+            <div class="photo-item">
+                <a href="icon/ (2).jpg" target="_blank">
+                    <img src="icon/ (2).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片3 -->
+            <div class="photo-item">
+                <a href="icon/ (3).jpg" target="_blank">
+                    <img src="icon/ (3).jpg" alt="图片">
+                </a>
+            </div>
+                        <!-- 照片4 -->
+            <div class="photo-item">
+                <a href="icon/ (4).jpg" target="_blank">
+                    <img src="icon/ (4).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片5 -->
+            <div class="photo-item">
+                <a href="icon/ (5).jpg" target="_blank">
+                    <img src="icon/ (5).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片6 -->
+            <div class="photo-item">
+                <a href="icon/ (6).jpg" target="_blank">
+                    <img src="icon/ (6).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片7 -->
+            <div class="photo-item">
+                <a href="icon/ (7).jpg" target="_blank">
+                    <img src="icon/ (7).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片8 -->
+            <div class="photo-item">
+                <a href="icon/ (8).jpg" target="_blank">
+                    <img src="icon/ (8).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片9 -->
+            <div class="photo-item">
+                <a href="icon/ (9).jpg" target="_blank">
+                    <img src="icon/ (9).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片10 -->
+            <div class="photo-item">
+                <a href="icon/ (10).jpg" target="_blank">
+                    <img src="icon/ (10).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片11 -->
+            <div class="photo-item">
+                <a href="icon/ (11).jpg" target="_blank">
+                    <img src="icon/ (11).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片12 -->
+            <div class="photo-item">
+                <a href="icon/ (12).jpg" target="_blank">
+                    <img src="icon/ (12).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片13 -->
+            <div class="photo-item">
+                <a href="icon/ (13).jpg" target="_blank">
+                    <img src="icon/ (13).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片14 -->
+            <div class="photo-item">
+                <a href="icon/ (14).jpg" target="_blank">
+                    <img src="icon/ (14).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片15 -->
+            <div class="photo-item">
+                <a href="icon/ (15).jpg" target="_blank">
+                    <img src="icon/ (15).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片16 -->
+            <div class="photo-item">
+                <a href="icon/ (16).jpg" target="_blank">
+                    <img src="icon/ (16).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片17 -->
+            <div class="photo-item">
+                <a href="icon/ (17).jpg" target="_blank">
+                    <img src="icon/ (17).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片18 -->
+            <div class="photo-item">
+                <a href="icon/ (18).jpg" target="_blank">
+                    <img src="icon/ (18).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片19 -->
+            <div class="photo-item">
+                <a href="icon/ (19).jpg" target="_blank">
+                    <img src="icon/ (19).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片20 -->
+            <div class="photo-item">
+                <a href="icon/ (20).jpg" target="_blank">
+                    <img src="icon/ (20).jpg" alt="图片">
+                </a>
+            </div>
+            <!-- 照片21 -->
+             <div class="photo-item">
+                <a href="icon/ (21).jpg" target="_blank">
+                    <img src="icon/ (21).jpg" alt="图片">
+                </a>
+             </div>        
+        </div>
+        
+        <div class="load-more">
+            <a href="2.html" class="back-button">下一页</a>
+        </div>
+    </div>
+</body>
+</html>
