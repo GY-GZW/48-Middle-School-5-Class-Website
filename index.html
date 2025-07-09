@@ -96,6 +96,15 @@
             padding-bottom: 10px;
         }
 
+        /* 视频播放器容器样式 */
+        .video-container {
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            aspect-ratio: 1/1;
+        }
+
         .button-group {
             display: flex;
             flex-direction: column;
@@ -194,6 +203,12 @@
                 <!--<p style="font-weight: bold; font-size: 1.1em;">"五班五班，非同一般；团结拼搏，勇往直前！"</p>-->
             </div>
         </div>
+        
+        <!-- 添加的视频播放器部分 -->
+        <h2>清朝老片</h2>
+        <div class="info-card">
+            <div class="video-container" id="artplayer"></div>
+        </div>
         <h2>班级动态</h2>
         <div class="info-card">
             <h3>近期活动</h3>
@@ -221,6 +236,54 @@
             <p>当前 CDN 节点: <span id="cdn" class="loading">检测中...</span></p>
         </footer>
     </div>
+    
+    <!-- 添加ArtPlayer.js脚本 -->
+    <script src="https://unpkg.com/artplayer/dist/artplayer.js"></script>
+    <!--强兼<script src="https://unpkg.com/artplayer@5.2.2/dist/artplayer.js"></script>-->
+    <script>
+        // 初始化视频播放器
+        document.addEventListener('DOMContentLoaded', function() {
+            const art = new Artplayer({
+                container: '.video-container',
+                url: '/666.mp4', // 替换为您的MP4视频URL
+                //aspectRatio: '1:1', // 设置视频比例为1:1
+                autoplay: false, // 不自动播放
+                theme: '#1DB954', // 使用与主题一致的颜色
+                volume: 0.7,
+                muted: false,
+                pip: true,
+                screenshot: true,
+                //setting: true,
+                hotkey: true,
+                fullscreen: true,
+                fullscreenWeb: true,
+                mutex: true,
+                backdrop: true,
+                playsInline: true,
+                autoSize: false,
+                autoMini: false,
+                airplay: true,
+                moreVideoAttr: {
+                    'webkit-playsinline': true,
+                    'playsinline': true,
+                    'controls': false,
+                    'preload': 'metadata'
+                },
+            });
+            // 监听播放器事件
+            art.on('ready', () => {
+                console.log('播放器已准备好');
+            });
+            
+            art.on('play', () => {
+                console.log('视频开始播放');
+            });
+            
+            art.on('pause', () => {
+                console.log('视频已暂停');
+            });
+        });
+    </script>
     <script src="https://gystu.top/cdn.js"></script>
 </body>
 </html>
